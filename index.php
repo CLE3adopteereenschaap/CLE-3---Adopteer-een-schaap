@@ -20,8 +20,7 @@ require_once 'database.php';
 
 
 <form method="post" action="">
-    <input type="text" name="first" required><br>
-    <input type="text" name="last" required><br>
+    <input type="text" name="name" required><br>
     <input type="password" name="pwd" required><br>
     <button type="submit" name="submit">Inloggen!</button>
 </form>

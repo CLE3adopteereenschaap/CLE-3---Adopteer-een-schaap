@@ -18,6 +18,7 @@ require_once 'database.php';
 </head>
 <body>
 
+<h1>Hallo</h1>
 
 <form method="post" action="">
     <input type="text" name="first" required><br>

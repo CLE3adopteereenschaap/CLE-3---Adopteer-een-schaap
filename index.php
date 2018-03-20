@@ -1,7 +1,48 @@
 <?php
+session_start();
 require_once 'database.php';
 
+if (isset($_POST['submit'])) {
+    //turning symbols into characters
+    $name = mysqli_real_escape_string($db, $_POST['name']);
+    $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
 
+    //check if form isn't empty
+    if (empty($uid) || empty($pass)) {
+        header("Location: ../index.php?login=emptyfield");
+        exit();
+    } else {
+        //run query
+        $sql = "SELECT * FROM ass WHERE name = '$name'";
+        $result = mysqli_query($db, $sql);
+        $resultcheck = mysqli_num_rows($result);
+        //check if correct user is selected
+        if ($resultcheck < 1) {
+            header("Location: ../index.php?login=error");
+            exit();
+        } else {
+            if ($row = mysqli_fetch_assoc($result)) {
+                //dehash password
+                $hashpasswordcheck = password_verify($pass, $row['password']);
+
+                //password check
+                if ($hashpasswordcheck == false){
+                    header("Location: ../index.php?login=error");
+                    exit();
+
+                }   elseif  ($hashpasswordcheck == true) {
+                    //log user in
+                    // not sure if this is correct
+                    $_SESSION['id'] = $row['user_id'];
+                    $_SESSION['name'] = $row['user_name'];
+                    $_SESSION['password'] = $row['user_pwd'];
+                    $_SESSION['points'] = $row['user_points'];
+                    echo "You are logged in";
+                }
+            }
+        }
+    }
+}
 
 
 ?>

@@ -3,9 +3,9 @@
 // Connectie maken met database
 
 $host       = 'localhost';
-$user       = '0935165';
-$password   = 'othohdim';
-$database   = '0935165';
+$user       = 'root';
+$password   = '';
+$database   = 'cle3';
 
 
 $db = mysqli_connect($host, $user, $password, $database)

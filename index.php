@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
 
     //check if form isn't empty
-    if (empty($uid) || empty($pass)) {
+    if (empty($name) || empty($pwd)) {
         header("Location: ../index.php?login=emptyfield");
         exit();
     } else {
@@ -23,11 +23,11 @@ if (isset($_POST['submit'])) {
         } else {
             if ($row = mysqli_fetch_assoc($result)) {
                 //dehash password
-                $hashpasswordcheck = password_verify($pass, $row['password']);
+                $hashpasswordcheck = password_verify($pwd, $row['password']);
 
                 //password check
                 if ($hashpasswordcheck == false){
-                    header("Location: ../index.php?login=error");
+                    header("Location: ../index.php?login=error2");
                     exit();
 
                 }   elseif  ($hashpasswordcheck == true) {

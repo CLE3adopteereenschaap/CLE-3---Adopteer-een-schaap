@@ -177,8 +177,11 @@ header .nav-login a{
     font-family: Arial;
     font-size: 16px;
     color: #1f1f1f;
-    line-height: 63px;
+    line-height: 64px;
     cursor: pointer;
+}
+header .nav-login a:hover{
+    background: #ccc;
 }
 .main-container {
     padding-top: 40px;
@@ -228,4 +231,17 @@ header .nav-login a{
     display: block;
     cursor: pointer;
     color: cornflowerblue;
+}
+/*/ header .nav-login a{
+    display: block;
+    width: 60px;
+    height: 30px;
+    border: none;
+    float: left;
+    background: white;
+    font-family: Arial;
+    font-size: 13px;
+    color: #1f1f1f;
+    line-height: 63px;
+    cursor: pointer;
 }

@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+ session_start();
 // check if submit is pressed
 if (isset($_POST['submit'])) {
     include 'db.php';

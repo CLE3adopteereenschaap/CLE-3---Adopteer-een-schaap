@@ -1,16 +1,18 @@
 <?php
-
+//database connection
 require_once 'database.php';
 
+//query to get all the information
 $query = "SELECT * FROM ass ORDER BY points DESC";
+
 
 $result = mysqli_query($db, $query);
 
+//putting the rows in a array
 $examp = [];
 while($row = mysqli_fetch_assoc($result)){
     $examp[] = $row;
 }
-
 
 
 ?>
@@ -26,6 +28,7 @@ while($row = mysqli_fetch_assoc($result)){
 
 
     <title>Scoreboard</title>
+
 </head>
 <body>
 
@@ -68,5 +71,20 @@ while($row = mysqli_fetch_assoc($result)){
     <p>Hier komt de uitleg van het spel. Dit is voor mensen die niet weten dat het spel bestaat.</p>
 </div>
 
+
+<script>
+    //variable with time
+    var time = new Date().getTime();
+
+    //function which refreshes the page every hour
+    function refresh() {
+        if(new Date().getTime() - time >= 600000)
+            window.location.reload(true);
+        else
+            setTimeout(refresh, 2000);
+    }
+
+    setTimeout(refresh, 1000);
+</script>
 </body>
 </html>

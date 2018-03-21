@@ -22,27 +22,17 @@ if (isset($_POST['submit'])) {
             exit();
         } else {
             if ($row = mysqli_fetch_assoc($result)) {
-                //dehash password
-                $hashpasswordcheck = password_verify($pwd, $row['password']);
-
-                //password check
-                if ($hashpasswordcheck == false){
-                    header("Location: ../index.php?login=error2");
-                    exit();
-
-                }   elseif  ($hashpasswordcheck == true) {
                     //log user in
-                    // not sure if this is correct
-                    $_SESSION['id'] = $row['user_id'];
-                    $_SESSION['name'] = $row['user_name'];
-                    $_SESSION['password'] = $row['user_pwd'];
-                    $_SESSION['points'] = $row['user_points'];
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['password'] = $row['password'];
+                    $_SESSION['points'] = $row['points'];
                     echo "You are logged in";
-                }
+                 }
             }
         }
     }
-}
+//}
 
 
 ?>

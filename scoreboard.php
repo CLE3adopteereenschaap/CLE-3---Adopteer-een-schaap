@@ -26,7 +26,7 @@ while($row = mysqli_fetch_assoc($result)){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+    <link rel="stylesheet" type="text/css" href="style/bigscreen.css">
     <title>Scoreboard</title>
 
 </head>
@@ -34,12 +34,8 @@ while($row = mysqli_fetch_assoc($result)){
 
 <!--HEADER-->
 <div class="header">
-    <div>
         <h1>Adopteer een Schaap</h1>
-    </div>
-    <div>
-        <img>
-    </div>
+        <img src="">
 </div>
 
 <!--SCORES-->
@@ -51,12 +47,12 @@ while($row = mysqli_fetch_assoc($result)){
         </tr>
 
         <?php
+//        need to change to for loop because of max number of scores
         foreach ($examp as $rows){
         ?>
         <tr>
                 <td><?php echo $rows['name']; ?></td>
                 <td><?php echo $rows['points']; ?></td>
-
         </tr>
         <?php
         }

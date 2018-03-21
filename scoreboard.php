@@ -32,41 +32,51 @@ while($row = mysqli_fetch_assoc($result)){
 </head>
 <body>
 
-<!--HEADER-->
-<div class="header">
-        <h1>Adopteer een Schaap</h1>
-        <img src="">
+    <!--HEADER-->
+    <div class="header">
+            <h1>Adopteer een Schaap</h1>
+            <img src="">
+    </div>
+
+
+<!--FLEXBOX-->
+<div class="flex">
+    <!--SCORES-->
+    <div class="scores">
+        <div class="table">
+            <p class="tableheader">Naam</p>
+            <?php
+    //        need to change to for loop because of max number of scores
+            foreach ($examp as $rows){
+            ?>
+                <p class="rows"><?php echo $rows['name']; ?></p>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="table">
+            <p class="tableheader">Score</p>
+            <?php
+            //        need to change to for loop because of max number of scores
+            foreach ($examp as $rows){
+                ?>
+                <p class="rows"><?php echo $rows['points']; ?></p>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+
+    <!--EXPLANATION-->
+    <div class="explain">
+        <h1>Uitleg spel</h1>
+        <p>Hier komt de uitleg van het spel. Dit is voor mensen die niet weten dat het spel bestaat.</p>
+    </div>
+<!--END FLEXBOX-->
 </div>
 
-<!--SCORES-->
-<div class="scores">
-    <table>
-        <tr>
-            <th>Naam</th>
-            <th>Score</th>
-        </tr>
 
-        <?php
-//        need to change to for loop because of max number of scores
-        foreach ($examp as $rows){
-        ?>
-        <tr>
-                <td><?php echo $rows['name']; ?></td>
-                <td><?php echo $rows['points']; ?></td>
-        </tr>
-        <?php
-        }
-        ?>
-
-    </table>
-</div>
-
-<!--EXPLANATION-->
-<div class="explain">
-    <h1>Uitleg spel</h1>
-    <p>Hier komt de uitleg van het spel. Dit is voor mensen die niet weten dat het spel bestaat.</p>
-</div>
-
+    
 
 <script>
     //variable with time

@@ -23,7 +23,7 @@ if (isset($_POST['submit'])){
                 header("Location: ../signup.php?signup=email");
                 exit();
             } else {
-                $sql = "SELECT * FROM users WHERE user_uid= '$uid'";
+                $sql = "SELECT * FROM users WHERE user_uid= '$uid' || user_email = '$email'";
                 $result = mysqli_query($connect, $sql);
                 $resultcheck = mysqli_num_rows($result);
 

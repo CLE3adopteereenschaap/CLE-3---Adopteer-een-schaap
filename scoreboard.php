@@ -41,6 +41,13 @@ while($row = mysqli_fetch_assoc($result)){
 
 <!--FLEXBOX-->
 <div class="flex">
+
+    <!--EXPLANATION-->
+    <div class="explain">
+        <h1>Uitleg spel</h1>
+        <p>Hier komt de uitleg van het spel. Dit is voor mensen die niet weten dat het spel bestaat.</p>
+    </div>
+    
     <!--SCORES-->
     <div class="scores">
         <div class="table">
@@ -67,11 +74,6 @@ while($row = mysqli_fetch_assoc($result)){
         </div>
     </div>
 
-    <!--EXPLANATION-->
-    <div class="explain">
-        <h1>Uitleg spel</h1>
-        <p>Hier komt de uitleg van het spel. Dit is voor mensen die niet weten dat het spel bestaat.</p>
-    </div>
 <!--END FLEXBOX-->
 </div>
 

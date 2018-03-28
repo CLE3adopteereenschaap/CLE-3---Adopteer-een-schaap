@@ -1,11 +1,11 @@
 <?php
 require_once 'database.php';
 
-$newPnts = $_GET['newPnts'];
+$newPnts = $_GET['php'];
 echo $newPnts;
 //query to get all the information
 $query = "SELECT * FROM ass ORDER BY points DESC";
-$cahngeQuery = "UPDATE ass SET 'points' =".$newPnts."WHERE id == '0'";
+//$cahngeQuery = "UPDATE ass SET 'points' =".$newPnts."WHERE id == '0'";
 
 $result = mysqli_query($db, $query);
 
@@ -29,18 +29,19 @@ echo $json;
 
 </head>
 <body>
-<button type="button" onclick="pntDecrease(twenty)" class="twenty">20 punten</button>
-<button type="button" onclick="pntDecrease(ten)" class="ten">10 punten</button>
-<button type="button" onclick="pntDecrease(five)" class="five">5 punten</button>
+<div id="twenty">   20 punten</div>
+<div id="ten">      10 punten</div>
+<div id="five">     5 punten</div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/2.0.5/reqwest.min.js"></script>
 
 <script>
     <?php echo 'var ar = '.$json; ?>
 </script>
 
 <script src="javascript/script.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </body>
 </html>

@@ -6,17 +6,17 @@ var pnts = ar[0].points;
 console.log(pnts);
 
 var newPnts;
-var php;
 
 function backToPhp() {
-    reqwest({
-        type: 'GET',
+    $.ajax({
         url: 'backend.php',
-        data: {php},
+        method: 'GET',
+        type: 'xhr',
+        data: {name: 'janessa'},
+        success (data){
+            alert(data);
+        }
     });
-
-
-
 }
 
 function pntDecrease (e){
@@ -27,9 +27,7 @@ function pntDecrease (e){
         } else {
             pnts -= 20;
             console.log(pnts);
-            newPnts = pnts;
-            php = JSON.stringify(newPnts);
-            console.log(php + "hoi");
+            newPnts = JSON.stringify(newPnts);
             backToPhp();
         }
     } else if (clickedItem === ten){
@@ -38,9 +36,7 @@ function pntDecrease (e){
         } else {
             pnts -= 10;
             console.log(pnts);
-            newPnts = pnts;
-            php = JSON.stringify(newPnts);
-            console.log(php + "hoi");
+            newPnts = JSON.stringify(pnts);
         }
     } else {
         if ((pnts - 5) <= 0) {
@@ -48,9 +44,7 @@ function pntDecrease (e){
         } else {
             pnts -= 5;
             console.log(pnts);
-            newPnts = pnts;
-            php = JSON.stringify(newPnts);
-            console.log(php + "hoi");
+            newPnts = JSON.stringify(pnts);
         }
     }
 }
@@ -58,4 +52,5 @@ function pntDecrease (e){
 twenty.addEventListener('click', pntDecrease);
 ten.addEventListener('click', pntDecrease);
 five.addEventListener('click', pntDecrease);
+
 

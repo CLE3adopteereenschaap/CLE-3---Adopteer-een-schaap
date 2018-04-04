@@ -11,7 +11,7 @@ require_once 'database.php';
 
 //query to get all the information
 $query = "SELECT * FROM ass ORDER BY points DESC";
-//$cahngeQuery = "UPDATE ass SET 'points' =".$newPnts."WHERE id == '0'";
+//$changeQuery = "UPDATE ass SET 'points' =".$newPnts."WHERE id == '0'";
 
 $result = mysqli_query($db, $query);
 

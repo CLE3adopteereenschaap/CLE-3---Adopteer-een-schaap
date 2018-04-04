@@ -13,9 +13,6 @@ function backToPhp() {
         method: 'GET',
         type: 'xhr',
         data: {name: 'janessa'},
-        success (data){
-            alert(data);
-        }
     });
 }
 
